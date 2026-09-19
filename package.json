@@ -44,5 +44,9 @@
 	"dependencies": {
 		"lucide-svelte": "^1.0.1",
 		"motion": "^13.4.0"
+	},
+	"allowScripts": {
+		"esbuild": true,
+		"workerd": true
 	}
 }
