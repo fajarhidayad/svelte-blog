@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Geist Mono', ui-monospace, monospace;
+
+	/* Emerald accent */
+	--color-accent-50: #ecfdf5;
+	--color-accent-100: #d1fae5;
+	--color-accent-200: #a7f3d0;
+	--color-accent-300: #6ee7b7;
+	--color-accent-400: #34d399;
+	--color-accent-500: #10b981;
+	--color-accent-600: #059669;
+	--color-accent-700: #047857;
+	--color-accent-800: #065f46;
+	--color-accent-900: #064e3b;
+}
+
+/* Dark mode variant */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+	--bg: #fafaf8;
+	--bg-surface: #f4f4f0;
+	--text: #1a1a1a;
+	--text-muted: #6b7280;
+	--border: #e5e5e0;
+	--accent: #059669;
+	--accent-soft: #d1fae5;
+}
+
+.dark {
+	--bg: #0f0f11;
+	--bg-surface: #18181b;
+	--text: #e4e4e7;
+	--text-muted: #a1a1aa;
+	--border: #27272a;
+	--accent: #34d399;
+	--accent-soft: #064e3b;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: var(--font-sans);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background-color: var(--accent-soft);
+	color: var(--text);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--text-muted);
+}
